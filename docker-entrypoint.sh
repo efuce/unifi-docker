@@ -159,7 +159,7 @@ if [[ "$UNIFI_STDOUT" == "true" ]]; then
   settings["unifi.logStdout"]="true"
 fi
 
-UNIFI_CMD="java ${JVM_OPTS} -jar ${BASEDIR}/lib/ace.jar start"
+UNIFI_CMD="java ${JVM_OPTS} --add-opens java.base/java.time=ALL-UNNAMED -jar ${BASEDIR}/lib/ace.jar start"
 
 if [ "$EUID" -ne 0 ] &&  command -v permset &> /dev/null
 then

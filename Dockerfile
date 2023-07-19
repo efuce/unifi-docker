@@ -4,7 +4,7 @@ RUN git clone https://github.com/jacobalberty/permset.git /src && \
     mkdir -p /out && \
     go build -ldflags "-X main.chownDir=/unifi" -o /out/permset
 
-FROM ubuntu:22.04
+FROM ubuntu:20.04
 
 LABEL maintainer="-- <weyif@outlook.com>"
 
@@ -23,7 +23,7 @@ ENV BASEDIR=/usr/lib/unifi \
     CERTNAME=cert.pem \
     CERT_PRIVATE_NAME=privkey.pem \
     CERT_IS_CHAIN=false \
-    GOSU_VERSION=1.14 \
+    GOSU_VERSION=1.10 \
     BIND_PRIV=true \
     RUNAS_UID0=true \
     UNIFI_GID=999 \
